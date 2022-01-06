@@ -16,6 +16,9 @@ id int auto_increment primary key,
 email varchar not null,
 password varchar not null,
 type_A varchar not null,
+role varchar not null,
+status varchar not null,
+isloggin int not null,
 createdAt timestamp default current_timestamp
 );
 

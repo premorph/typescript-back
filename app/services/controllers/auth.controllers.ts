@@ -4,6 +4,9 @@ import { Auth } from '../../class/auth.model';
 import { compare, encrypt } from '../../helpers/bcrypt.helpers';
 import { httpError } from '../../helpers/httpHandler.helpers';
 
+
+
+
 export const AuthCtrl = async (req: any, res: any) => {
 
     try {
