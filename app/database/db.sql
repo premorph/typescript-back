@@ -19,6 +19,7 @@ type_A varchar not null,
 role varchar not null,
 status varchar not null,
 isloggin int not null,
+lastLogin timestamp null,
 createdAt timestamp default current_timestamp
 );
 

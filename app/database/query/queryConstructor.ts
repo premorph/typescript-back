@@ -3,7 +3,7 @@ export const queryConstructor={
         auth:'SELECT email,password FROM authentication WHERE email=$1',
         registerAuth: 'INSERT INTO authentication (email, password,type_a) VALUES ($1,$2,$3)',
         verifyRole:'SELECT * FROM authentication WHERE id=$1',
-        isLoggin:'UPDATE authentication set isloggin=$2 where id=$1'
+        isLoggin:'UPDATE authentication set isloggin=$2 , lastLogin=current_timestamp where id=$1'
     },
     queryUser:{
         createOne: 'INSERT INTO users (firstname,lastname, address,phone,idauth,status) VALUES ($1,$2,$3,$4,$5,$6)',

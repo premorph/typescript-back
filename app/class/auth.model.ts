@@ -8,15 +8,25 @@ export class Auth {
     public password?:string;
     public type_a?:string;
     public role?:string| number;
+    public isLogin?:string| number;
+    public status?:string| number;
+    
+
     constructor(
         email?:string,
         password?:string,
-        type_a?:string
+        type_a?:string,
+        role?:string| number,
+        isLogin?:string| number,
+        status?:string| number
     ){
 
         this.email=email;
         this.password=password;
         this.type_a=type_a
+        this.role=role;
+        this.isLogin=isLogin;
+        this.status=status;
 
     }
 public async findOne(id:number|string)
@@ -53,10 +63,13 @@ public async findOne(id:number|string)
     }
     
    }
-   createToken(id:number){
-
-   }
-   verifyToken(token:string){
-
-   }
+  async isLoggin(auth:IAuth){
+       const {id,isLogin}=auth
+         try {
+                const result= await query(queryConstructor.queryAuth.isLoggin,[id,isLogin])
+                return result
+            } catch (error) {
+                return error
+            }
+        }
 }

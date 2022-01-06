@@ -4,6 +4,7 @@ export interface IAuth
     password?:string;
     type_a?:string;
     role?:string | number;
-    isLoggin?:number;
-    status?:number | string
+    isLogin?:number|string;
+    status?:number | string 
+    id?:number | string
 }

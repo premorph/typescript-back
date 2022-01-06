@@ -24,6 +24,7 @@ console.log(email)
             const user=result.rows[0];
         const checkPassword= await compare(password,user.password)
         if(checkPassword){
+            const validate = await isLogin(user.id,1)
             return res.json({ok:true,
                 resutl:result.rows})   
         }
@@ -69,4 +70,17 @@ export const registerCtrl = async (req: any, res: any) => {
     } catch (error) {
         return httpError(res, error)
     }
+}
+
+
+const isLogin = async(id,islogin:any)=>{
+
+try {
+    const login = new Auth()
+    const data={id,islogin}
+    const validate= await login.isLoggin(data) 
+    
+} catch (error) {
+    return error
+}
 }
